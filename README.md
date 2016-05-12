@@ -1,4 +1,1 @@
-Yagho Baldansi
-Thamires Oliveira
-Caio César
-Lavínia Maria
+Yagho Baldansi /// Thamires Oliveira /// Caio César /// Lavínia Maria
