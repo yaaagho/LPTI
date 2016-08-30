@@ -1,144 +1,233 @@
-<html><head>
-        <title>sdgljh</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<html>
+	
+	<head>
+		
+		<title>sdgljh</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/meuscript.js"></script>
-        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="css/styleReceberDoacao.css" rel="stylesheet" type="text/css">
-        <link href="css/cssRealizarDoacao.css" rel="stylesheet" type="text/css">
-    </head><body>
-        <div class="section section-primary">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-11 text-center">
-                        <h1>Sistema de Assistência Social</h1>
-                        <p>Gerenciamento</p>
-                        <br>
-                        <br>
-                    </div>
-                    <div class="col-md-1">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <a href="perfil.html"><i class="fa fa-4x fa-fw fa-user text-inverse"></i></a>
-                            </div>
-                        </div>
-                        <h5 contenteditable="true" class="text-center">PERFIL</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="menu"></div>
-            <div class="container-fluid">
-                <div class="row" id="linha">
-                    <div class="col-md-4 text-left">
-                        <div class="row">
-                            <div class="col-md-3 text-center">
-                                <a><i class="fa fa-4x fa-align-justify fa-fw text-primary"></i></a>
-                            </div>
-                            <div class="col-md-9" id="buttons">
-                                <a class="btn btn-block btn-default btn-lg" href="telaPrincipal.html">Tela Principal</a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3 text-center">
-                                <a><i class="fa fa-4x fa-fw text-primary fa-dropbox"></i></a>
-                            </div>
-                            <div class="col-md-9" id="buttons">
-                                <a class="btn btn-block btn-default btn-lg" href="realizarDoacao.html">Realizar Doação</a>
-                                <a class="btn btn-block btn-default btn-lg" href="listarDoacoes.html">Listar Doações Realizadas<br></a>
-                                <a class="btn btn-block btn-default btn-lg" href="receberDoacao.html">Receber Arrecadação</a>
-                                <a class="btn btn-block btn-default btn-lg" href="listarEstoque.html">Listar Produtos em Estoque<br></a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="col-md-3 text-center">
-                                        <a><i class="fa fa-4x fa-child fa-fw text-primary"></i></a>
-                                    </div>
-                                    <div class="col-md-9" id="buttons">
-                                        <a class="btn btn-block btn-default btn-lg" href="inserirUsuario.html">Inserir Usuario</a>
-                                        <a class="btn btn-block btn-default btn-lg" href="listarUsuarios.html">Listar Usuarios<br></a>
-                                        <a class="btn btn-block btn-default btn-lg" href="listarAssistidos.html">Listar Assistidos<br></a>
-                                        <a class="btn btn-block btn-default btn-lg" href="listarDoadores.html">Listar Doadores</a>
-                                    </div>
-                                </div>
-                                <div class="row"><div class="col-md-3"><a><i class="fa fa-4x fa-dollar fa-fw text-primary"></i></a></div><div class="col-md-9"><div class="row"><div class="col-md-12"><a class="btn btn-block btn-default btn-lg" href="arrecadarDinheiro.html">Arrecadar Dinheiro</a><a class="btn btn-block btn-default btn-lg" href="retirarDinheiro.html">Retirar Dinheiro</a><a class="btn btn-block btn-default btn-lg" href="listarDinheiro.html">Listar Economias</a></div></div></div></div><div class="row">
-                                    <div class="col-md-3 text-center">
-                                        <a><i class="fa fa-4x fa-fw text-primary fa-area-chart"></i></a>
-                                    </div>
-                                    <div class="col-md-9" id="buttons">
-                                        <a class="btn btn-block btn-default btn-lg" href="arrecadacoes.html">Relatório de Entradas</a>
-                                        <a class="btn btn-block btn-default btn-lg" href="doacoes.html">Relatório de Saídas<br></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4" id="formulario">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h1 class="text-center" contenteditable="true">Realizar Doação</h1>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <form class="form-horizontal text-left" role="form">
-                                    <div class="form-group">
-                                        <div class="col-sm-2">
-                                            <label for="inputEmail3" class="control-label">Assistido</label>
-                                        </div>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control input-lg" id="inputEmail3" placeholder="Qual família será assistida?">
-                                        </div>
-                                    </div>
-                                    <div class="form-group has-feedback">
-                                        <div class="col-sm-2">
-                                            <label for="inputEmail3" class="control-label">Doação</label>
-                                        </div>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control input-lg" id="inputPassword3" placeholder="Que produto será doado?">
-                                        </div>
-                                    </div>
-                                    <div class="form-group has-feedback">
-                                        <div class="col-sm-2">
-                                            <label for="inputEmail3" class="control-label">Quantidade</label>
-                                        </div>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control input-lg" id="inputPassword3" placeholder="Quanto será doado do produto?">
-                                        </div>
-                                    </div>
-                                    <div class="form-group has-feedback">
-                                        <div class="col-sm-2">
-                                            <label for="inputEmail3" class="control-label">Data de Saída</label>
-                                        </div>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control input-lg" id="inputPassword3" placeholder="Que dia este produto foi doado?">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <a href="#"><i class="fa fa-2x fa-fw fa-plus pull-right text-primary"></i></a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 text-center">
-                                <a class="btn btn-lg btn-success" href="telaPrincipal.html">Confirma</a>
-                            </div>
-                            <div class="col-md-6 text-center">
-                                <a class="btn btn-danger btn-lg" href="telaPrincipal.html">Cancela</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-
-</body></html>
+		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="css/styleReceberDoacao.css" rel="stylesheet" type="text/css">
+		<link href="css/cssRealizarDoacao.css" rel="stylesheet" type="text/css">
+	</head>
+	
+	<body>
+		
+		<div class="section section-primary">
+			
+			<div class="container">
+				
+				<div class="row">
+					
+					<div class="col-md-11 text-center">
+						
+						<h1>Sistema de Assistência Social</h1>
+						<p>Gerenciamento</p>
+					</div>
+					
+					<div class="col-md-1">
+						
+						<div class="row">
+							
+							<div class="col-md-12">
+								
+								<a href="perfil.html"><i class="fa fa-4x fa-fw fa-user text-inverse"></i></a>
+							</div>
+						</div>
+						
+						<h5 contenteditable="true" class="text-center">PERFIL</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			
+			<div class="menu"></div>
+			<div class="container-fluid">
+				
+				<div class="row" id="linha">
+					
+					<div class="col-md-4 text-left">
+						
+						<div class="row">
+							
+							<div class="col-md-3 text-center">
+								
+								<a><i class="fa fa-4x fa-align-justify fa-fw text-primary"></i></a>
+							</div>
+							
+							<div class="col-md-9" id="buttons">
+								
+								<a class="btn btn-block btn-default btn-lg" href="telaPrincipal.html">Tela Principal</a>
+							</div>
+						</div>
+						
+						<div class="row">
+							
+							<div class="col-md-3 text-center">
+								
+								<a><i class="fa fa-4x fa-fw text-primary fa-dropbox"></i></a>
+							</div>
+							
+							<div class="col-md-9" id="buttons">
+								
+								<a class="btn btn-block btn-default btn-lg" href="realizarDoacao.html">Realizar Doação</a>
+								<a class="btn btn-block btn-default btn-lg" href="listarDoacoes.html">Listar Doações Realizadas<br></a>
+								<a class="btn btn-block btn-default btn-lg" href="receberDoacao.html">Receber Arrecadação</a>
+								<a class="btn btn-block btn-default btn-lg" href="listarEstoque.html">Listar Produtos em Estoque<br></a>
+							</div>
+						</div>
+						
+						<div class="row">
+							
+							<div class="col-md-12">
+								
+								<div class="row">
+									
+									<div class="col-md-3 text-center">
+										
+										<a><i class="fa fa-4x fa-child fa-fw text-primary"></i></a>
+									</div>
+									
+									<div class="col-md-9" id="buttons">
+										
+										<a class="btn btn-block btn-default btn-lg" href="inserirUsuario.html">Inserir Usuario</a>
+										<a class="btn btn-block btn-default btn-lg" href="listarUsuarios.html">Listar Usuarios<br></a>
+										<a class="btn btn-block btn-default btn-lg" href="listarAssistidos.html">Listar Assistidos<br></a>
+										<a class="btn btn-block btn-default btn-lg" href="listarDoadores.html">Listar Doadores</a>
+									</div>
+								</div>
+								
+								<div class="row">
+									
+									<div class="col-md-3">
+										
+										<a><i class="fa fa-4x fa-dollar fa-fw text-primary"></i></a>
+									</div>
+									
+									<div class="col-md-9">
+										<div class="row">
+											<div class="col-md-12">
+												<a class="btn btn-block btn-default btn-lg" href="arrecadarDinheiro.html">Arrecadar Dinheiro</a>
+												<a class="btn btn-block btn-default btn-lg" href="retirarDinheiro.html">Retirar Dinheiro</a>
+												<a class="btn btn-block btn-default btn-lg" href="listarDinheiro.html">Listar Economias</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="row">
+									
+									<div class="col-md-3 text-center">
+										
+										<a><i class="fa fa-4x fa-fw text-primary fa-area-chart"></i></a>
+									</div>
+									
+									<div class="col-md-9" id="buttons">
+										
+										<a class="btn btn-block btn-default btn-lg" href="arrecadacoes.html">Relatório de Entradas</a>
+										<a class="btn btn-block btn-default btn-lg" href="doacoes.html">Relatório de Saídas<br></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-4" id="formulario">
+						
+						<div class="row">
+							
+							<div class="col-md-12">
+								
+								<h1 class="text-center">Realizar Doação</h1>
+							</div>
+						</div>
+						
+						<div class="row">
+							
+							<div class="col-md-12">
+								
+								<form class="form-horizontal text-left" role="form">
+									
+									<div class="form-group">
+										
+										<div class="col-sm-2">
+											
+											<label for="inputEmail3" class="control-label">Assistido</label>
+										</div>
+										
+										<div class="col-sm-10">
+											
+											<input type="text" class="form-control input-lg" id="inputEmail3" placeholder="Qual família será assistida?">
+										</div>
+									</div>
+									
+									<div class="form-group has-feedback">
+										
+										<div class="col-sm-2">
+											
+											<label for="inputEmail3" class="control-label">Doação</label>
+										</div>
+										
+										<div class="col-sm-10">
+											
+											<input type="text" class="form-control input-lg" id="inputPassword3" placeholder="Que produto será doado?">
+										</div>
+									</div>
+									
+									<div class="form-group has-feedback">
+										
+										<div class="col-sm-2">
+											
+											<label for="inputEmail3" class="control-label">Quantidade</label>
+										</div>
+										
+										<div class="col-sm-10">
+											
+											<input type="text" class="form-control input-lg" id="inputPassword3" placeholder="Quanto será doado do produto?">
+										</div>
+									</div>
+									
+									<div class="form-group has-feedback">
+										
+										<div class="col-sm-2">
+											
+											<label for="inputEmail3" class="control-label">Data de Saída</label>
+										</div>
+										
+										<div class="col-sm-10">
+											
+											<input type="text" class="form-control input-lg" id="inputPassword3" placeholder="Que dia este produto foi doado?">
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="row">
+							
+							<div class="col-md-12">
+								
+								<a href="#"><i class="fa fa-2x fa-fw fa-plus pull-right text-primary"></i></a>
+							</div>
+						</div>
+						
+						<div class="row">
+							
+							<div class="col-md-6 text-center">
+								
+								<a class="btn btn-lg btn-success" href="telaPrincipal.html">Confirma</a>
+							</div>
+							
+							<div class="col-md-6 text-center">
+								
+								<a class="btn btn-danger btn-lg" href="telaPrincipal.html">Cancela</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

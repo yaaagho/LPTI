@@ -4,18 +4,23 @@ $(document).ready(function(e){
 		
 		e.preventDefault();
 		var href = $(this) . attr('href');
-		$('#painel').load(href + ' #painel > *', 
+		$('#painel').load(href + ' #painel', function(){
 		
-			function(){
+			$('a').click (function(e){
 				
-				$('#painel a').click (function(e){
+				e.preventDefault();
+				var href = $(this) . attr('href');
+				$('#conteudo').load(href + ' #conteudo', function(){
 					
-					e.preventDefault();
-					var href = $(this) . attr('href');
-					$('#conteudo').load(href + '#conteudo > *', function(){});
+						$('a').click (function(e){
+							
+							e.preventDefault();
+							var href = $(this) . attr('href');
+							$('#conteudo').load(href + '#conteudo');
+						});
 				});
-			}
-		);
+			});
+		});
 	});
 	
 //	$('.col-md-9').hide();
@@ -34,5 +39,15 @@ $(document).ready(function(e){
 //			
 //			$('.col-md-9').hide();
 //		}
-//	)
+//	);
 });
+
+function ajax(){
+	
+	$('painel a').click (function (e){
+		
+			e.preventDefault();
+			var href = $(this) . attr('href');
+			$('#painel').load(href + '#painel', function(){ ajax(); });
+	});
+}
