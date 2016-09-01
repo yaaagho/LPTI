@@ -1,3 +1,8 @@
+#painel{
+
+	float: left;
+}
+
 #formulario{
 	
 	width: 100%;
@@ -6,4 +11,9 @@
 #banner{
 
 	background-image: url('../imgs/fundo.jpg');
+}
+
+#menu i{
+
+	
 }
