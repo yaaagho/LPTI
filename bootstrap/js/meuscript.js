@@ -12,6 +12,8 @@ $(document).ready(function(e){
 	$('.col-md-9').css("margin", "auto");
 	$('.col-md-9').css("left", "70px");
 	
+	$('#conteudo').css({position:'absolute', left: 60-($('#conteudo').width()/2) + '%', margin:'-'+($('#conteudo').height()/2)+'px 0 0 -'+($('#conteudo').width() / 2)+'px'});
+	
 	$('.row').hover(
 	
 		function(){
@@ -26,12 +28,58 @@ $(document).ready(function(e){
 	);
 });
 
-function ajax(){
+function verificaUsuario(){
 	
-	$('painel a').click (function (e){
+	var nome = $('#nome').val();
+	var senha = $('#senha').val();
+	var telefone = $('#telefone').val();
+	var email = $('#email').val();
+	var teste = true;
+	
+	//testando o nome
+	if (nome.lenght < 1){
 		
-			e.preventDefault();
-			var href = $(this) . attr('href');
-			$('#painel').load(href + '#painel', function(){ ajax(); });
-	});
+		teste = false;
+	}
+	
+	var teste_nome = nome.split(' ');
+	
+	if (teste_nome.lenght < 2){
+		
+		teste = false;
+	}
+	
+	//testando a senha
+	if (senha.lenght < 4){
+		
+		teste = false;
+	}
+	
+	//testando o email
+	var teste_email = email.split('@');
+	teste_email = teste_email.split('.');
+	
+	if (teste_email.lenght != 3){
+		
+		teste = false;
+	}
+	
+	//testando o telefone
+	if (telefone.lenght != 9){
+		
+		teste = false;
+	}
+	
+	//finalização
+	if (teste == false){
+		
+		alert("Informações incorretas!");
+		$('#nome').removeAttr('value');
+		$('#login').removeAttr('value');
+		$('#senha').removeAttr('value');
+		$('#telefone').removeAttr('value');
+		$('#email').removeAttr('value');
+	}
+	
+	return teste;
 }
