@@ -87,13 +87,13 @@
 							</div>
 							<div class="row">
 								<div class="col-md-12">
-									<form class="form-horizontal text-left" role="form">
+									<form class="form-horizontal text-left" role="form" onSubmit="return validaDinheiro()">
 										<div class="form-group">
 											<div class="col-sm-2">
 												<label for="inputEmail3" class="control-label">Razão</label>
 											</div>
 											<div class="col-sm-10">
-												<input type="text" class="form-control input-lg" id="inputEmail3" placeholder="Qual a razão da retirada?">
+												<input name="razao" type="text" class="form-control input-lg" id="inputEmail3" placeholder="Qual a razão da retirada?">
 											</div>
 										</div>
 										<div class="form-group has-feedback">
@@ -101,7 +101,7 @@
 												<label for="inputEmail3" class="control-label">Quantidade</label>
 											</div>
 											<div class="col-sm-10">
-												<input type="text" class="form-control input-lg" id="inputPassword3" placeholder="Quanto dinheiro?">
+												<input name="quantidade" type="text" class="form-control input-lg" id="inputPassword3" placeholder="Quanto dinheiro?">
 											</div>
 										</div>
 										<div class="form-group has-feedback">
@@ -109,18 +109,18 @@
 												<label for="inputEmail3" class="control-label">Data de Saída</label>
 											</div>
 											<div class="col-sm-10">
-												<input type="text" class="form-control input-lg" id="inputPassword3" placeholder="Que dia este dinheiro foi retirado?">
+												<input name="saida" type="text" class="form-control input-lg" id="inputPassword3" placeholder="Que dia este dinheiro foi retirado?">
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6 text-center">
+												<button type="submit" class="btn btn-lg btn-success" href="telaPrincipal.html">Confirma</button>
+											</div>
+											<div class="col-md-6 text-center">
+												<a class="btn btn-danger btn-lg" href="telaPrincipal.html">Cancela</a>
 											</div>
 										</div>
 									</form>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6 text-center">
-									<a class="btn btn-lg btn-success" href="telaPrincipal.html">Confirma</a>
-								</div>
-								<div class="col-md-6 text-center">
-									<a class="btn btn-danger btn-lg" href="telaPrincipal.html">Cancela</a>
 								</div>
 							</div>
 						</div>

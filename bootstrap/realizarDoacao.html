@@ -152,7 +152,7 @@
 								
 								<div class="col-md-12">
 									
-									<form class="form-horizontal text-left" role="form">
+									<form class="form-horizontal text-left" role="form" onSubmit="return verificaDoacao()">
 										
 										<div class="form-group">
 											
@@ -163,10 +163,10 @@
 											
 											<div class="col-sm-10">
 												
-												<input type="text" class="form-control input-lg" id="inputEmail3" placeholder="Qual família será assistida?">
+												<input name="assistido" type="text" class="form-control input-lg" id="inputEmail3" placeholder="Qual família será assistida?">
 											</div>
 										</div>
-										
+										<hr>
 										<div class="form-group has-feedback">
 											
 											<div class="col-sm-2">
@@ -176,7 +176,7 @@
 											
 											<div class="col-sm-10">
 												
-												<input type="text" class="form-control input-lg" id="inputPassword3" placeholder="Que produto será doado?">
+												<input name="doacao" type="text" class="form-control input-lg" id="inputPassword3" placeholder="Que produto será doado?">
 											</div>
 										</div>
 										
@@ -189,7 +189,7 @@
 											
 											<div class="col-sm-10">
 												
-												<input type="text" class="form-control input-lg" id="inputPassword3" placeholder="Quanto será doado do produto?">
+												<input name="quantidade" type="text" class="form-control input-lg" id="inputPassword3" placeholder="Quanto será doado do produto?">
 											</div>
 										</div>
 										
@@ -202,30 +202,30 @@
 											
 											<div class="col-sm-10">
 												
-												<input type="text" class="form-control input-lg" id="inputPassword3" placeholder="Que dia este produto foi doado?">
+												<input name="saida" type="text" class="form-control input-lg" id="inputPassword3" placeholder="Que dia este produto foi doado?">
+											</div>
+										</div>
+										<div class="row">
+											
+											<div class="col-md-12">
+												
+												<i class="fa fa-2x fa-fw fa-plus pull-right text-primary" onclick="replicateForm()"></i>
+											</div>
+										</div>
+										
+										<div class="row">
+											
+											<div class="col-md-6 text-center">
+												
+												<button type="submit" class="btn btn-lg btn-success" href="telaPrincipal.html">Confirma</button>
+											</div>
+											
+											<div class="col-md-6 text-center">
+												
+												<a class="btn btn-danger btn-lg" href="telaPrincipal.html">Cancela</a>
 											</div>
 										</div>
 									</form>
-								</div>
-							</div>
-							<div class="row">
-								
-								<div class="col-md-12">
-									
-									<a href="#"><i class="fa fa-2x fa-fw fa-plus pull-right text-primary"></i></a>
-								</div>
-							</div>
-							
-							<div class="row">
-								
-								<div class="col-md-6 text-center">
-									
-									<a class="btn btn-lg btn-success" href="telaPrincipal.html">Confirma</a>
-								</div>
-								
-								<div class="col-md-6 text-center">
-									
-									<a class="btn btn-danger btn-lg" href="telaPrincipal.html">Cancela</a>
 								</div>
 							</div>
 						</div>
