@@ -30,14 +30,14 @@ $(document).ready(function(e){
 
 function verificaUsuario(){
 	
-	var nome = $('#nome').val();
-	var senha = $('#senha').val();
-	var telefone = $('#telefone').val();
-	var email = $('#email').val();
-	var teste = true;
+	var nome = document.forms["insere_usuarios"]["nome"].value;
+	var senha = document.forms["insere_usuarios"]["senha"].value;
+	var telefone = document.forms["insere_usuarios"]["telefone"].value;
+	var email = document.forms["insere_usuarios"]["email"].value;
+	var teste = false;
 	
 	//testando o nome
-	if (nome.lenght < 1){
+	if (nome == null || nome == ""){
 		
 		teste = false;
 	}
@@ -50,7 +50,7 @@ function verificaUsuario(){
 	}
 	
 	//testando a senha
-	if (senha.lenght < 4){
+	if (senha.lenght < 4 || senha == null || senha == ""){
 		
 		teste = false;
 	}
@@ -65,7 +65,7 @@ function verificaUsuario(){
 	}
 	
 	//testando o telefone
-	if (telefone.lenght != 9){
+	if (telefone.lenght != 9 || telefone == null || telefone == ""){
 		
 		teste = false;
 	}
@@ -74,12 +74,14 @@ function verificaUsuario(){
 	if (teste == false){
 		
 		alert("Informações incorretas!");
-		$('#nome').removeAttr('value');
-		$('#login').removeAttr('value');
-		$('#senha').removeAttr('value');
-		$('#telefone').removeAttr('value');
-		$('#email').removeAttr('value');
+		return false;
+	}else{
+		
+		return true;
 	}
+};
+
+function verificaDinheiro(){
 	
-	return teste;
-}
+	
+};
