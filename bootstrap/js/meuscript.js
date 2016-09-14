@@ -12,8 +12,6 @@ $(document).ready(function(e){
 	$('.col-md-9').css("margin", "auto");
 	$('.col-md-9').css("left", "70px");
 	
-	$('#conteudo').css({position:'absolute', left: 60-($('#conteudo').width()/2) + '%', margin:'-'+($('#conteudo').height()/2)+'px 0 0 -'+($('#conteudo').width() / 2)+'px'});
-	
 	$('.row').hover(
 	
 		function(){
@@ -28,60 +26,30 @@ $(document).ready(function(e){
 	);
 });
 
-function verificaUsuario(){
+function verificaDoacao(){
 	
-	var nome = document.forms["insere_usuarios"]["nome"].value;
-	var senha = document.forms["insere_usuarios"]["senha"].value;
-	var telefone = document.forms["insere_usuarios"]["telefone"].value;
-	var email = document.forms["insere_usuarios"]["email"].value;
-	var teste = false;
+	var assistido = document.forms["realizarDoacao"]["assistido"].value;
+	var quantidade = document.forms["realizarDoacao"]["quantidade"].value;
+	var produto = document.forms["realizarDoacao"]["doacao"].value;
+	var data = document.forms["realizarDoacao"]["saida"].value;
 	
-	//testando o nome
-	if (nome == null || nome == ""){
+	if (assistido == null || assistido == ""){
 		
-		teste = false;
-	}
-	
-	var teste_nome = nome.split(' ');
-	
-	if (teste_nome.lenght < 2){
-		
-		teste = false;
-	}
-	
-	//testando a senha
-	if (senha.lenght < 4 || senha == null || senha == ""){
-		
-		teste = false;
-	}
-	
-	//testando o email
-	var teste_email = email.split('@');
-	teste_email = teste_email.split('.');
-	
-	if (teste_email.lenght != 3){
-		
-		teste = false;
-	}
-	
-	//testando o telefone
-	if (telefone.lenght != 9 || telefone == null || telefone == ""){
-		
-		teste = false;
-	}
-	
-	//finalização
-	if (teste == false){
-		
-		alert("Informações incorretas!");
+		alert("Nome da família assistida não foi especificado!");
 		return false;
-	}else{
-		
-		return true;
 	}
-};
-
-function verificaDinheiro(){
 	
+	if (quantidade == null || quantidade == "" || quantidade == 0){
+		
+		alert("Quantidade de " + produto + " não foi especificada!");
+		return false;
+	}
 	
-};
+	if (data == null || data == ""){
+		
+		alert("Data de saída da doação não foi especificada!");
+		return false;
+	}
+	
+	return true;
+}
