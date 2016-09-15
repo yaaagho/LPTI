@@ -4,7 +4,10 @@ $(document).ready(function(e){
 		
 		e.preventDefault();
 		var href = $(this) . attr('href');
-		$('#conteudo').load(href + ' #conteudo > *');
+		$('#conteudo').load(href + ' #conteudo > *', function(){
+			
+			$("#data").datepicker({ maxDate: new Date() });
+		});
 	});
 	
 	$('.col-md-9').hide();
@@ -39,6 +42,12 @@ function verificaDoacao(){
 		return false;
 	}
 	
+	if (produto == null || produto == ""){
+		
+		alert("Produto não foi especificado!");
+		return false;
+	}
+	
 	if (quantidade == null || quantidade == "" || quantidade == 0){
 		
 		alert("Quantidade de " + produto + " não foi especificada!");
@@ -53,3 +62,66 @@ function verificaDoacao(){
 	
 	return true;
 }
+
+function verificaArrecadacao(){
+	
+	var doador = document.forms["realizarArrecadacao"]["doador"].value;
+	var produto = document.forms["realizarArrecadacao"]["doacao"].value;
+	var quantidade = document.forms["realizarArrecadacao"]["quantidade"].value;
+	var data = document.forms["realizarArrecadacao"]["entrada"].value;
+	
+	if (doador == null || doador == ""){
+		
+		alert("Doador não foi especificado!");
+		return false;
+	}
+	
+	if (produto == null || produto == ""){
+		
+		alert("Produto não foi especificado!");
+		return false;
+	}
+	
+	if (quantidade == null || quantidade == "" || quantidade == 0){
+		
+		alert("Quantidade de " + produto + " não foi especificada!");
+		return false;
+	}
+	
+	if (data == null || data == ""){
+		
+		alert("Data da arrecadação não foi especificada!");
+		return false;
+	}
+	
+	return true;
+}
+
+function verificaDinheiroA(){
+	
+	var doador = document.forms["arrecadaDinheiro"]["doador"].value;
+	var quantidade = document.forms["arrecadaDinheiro"]["quantidade"].value;
+	var data = document.forms["arrecadaDinheiro"]["saida"].value;
+	
+	if  (doador == null || doador == ""){
+		
+		alert("Doador não foi especificado!");
+		return false;
+	}
+
+	if (quantidade == null || quantidade == "" || quantidade == 0){
+		
+		alert("Quantidade não foi especificada!");
+		return false;
+	}
+	
+	if (data == null || data == ""){
+		
+		alert("Data de arrecadação não foi especificada!");
+		return false;
+	}
+	
+	return true;
+}
+
+
