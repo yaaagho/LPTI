@@ -68,11 +68,11 @@ public class Usuario implements Serializable{
 		this.id = id;
 	}
 
-	public String getEndereço() {
+	public String getEndereco() {
 		return endereco;
 	}
 
-	public void setEndereço(String endereco) {
+	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
 
