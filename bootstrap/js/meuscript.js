@@ -40,7 +40,10 @@ $(document).ready(function(e){
 			left: 'title',
 			center: 'add_evento',
 			right: 'today prev,next'
-		}
+		},
+		
+		handleWindowResize: true,
+		fixedWeekCount: false
 	});
 });
 
