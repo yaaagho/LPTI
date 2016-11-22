@@ -1,0 +1,36 @@
+#painel{
+
+	float: left;
+}
+
+#conteudo >*{
+
+	text-align: center;
+}
+
+#conteudo{
+
+	position: absolute;
+	top: 50%;
+	left: 22%;
+}
+
+#formulario{
+	
+	width: 100%;
+}
+
+#banner{
+
+	background-image: url('../imgs/fundo.jpg');
+}
+
+.calendar .fc-row{
+
+	height: 1px;
+}
+
+.calendar{
+
+	margin-left: 10%;
+}
