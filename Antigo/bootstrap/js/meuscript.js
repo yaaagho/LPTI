@@ -41,6 +41,21 @@ $(document).ready(function(e){
 			center: 'add_evento',
 			right: 'today prev,next'
 		},
+		events: [{
+				"title" : "evento 1",
+				"start" : "2016-11-20",
+				"end" : "2016-11-21"
+		},
+		{
+				"title" : "evento 2",
+				"start" : "2016-11-22",
+				"end" : "2016-11-23"
+		},
+		{
+				"title" : "evento 3",
+				"start" : "2016-11-24",
+				"end" : "2016-11-25"
+		}],
 		
 		handleWindowResize: true,
 		fixedWeekCount: false

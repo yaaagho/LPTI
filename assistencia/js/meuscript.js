@@ -108,7 +108,8 @@ function carregaCalendario(){
 		},
 		complete: function(response){
 			
-			phpResponse = response.responseText;
+			alert(response.responseText);
+			phpResponse = JSON.parse(response.responseText);
 		},
 		error: function(){
 			
@@ -123,7 +124,7 @@ function carregaCalendario(){
 				text: 'Adicionar Evento',
 				click: function() {
 					
-					alert(phpResponse);
+					alert(JSON.stringify(phpResponse));
 				}
 			}
 		},
@@ -132,6 +133,7 @@ function carregaCalendario(){
 			center: 'add_evento',
 			right: 'today prev,next'
 		},
+		eventSources: 'php/requestEvents.php?month='+month+'&year='+year+'&num_days='+daysInMonth(month, year),
 		
 		handleWindowResize: true,
 		fixedWeekCount: false
