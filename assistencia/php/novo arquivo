@@ -1,0 +1,21 @@
+<?php 
+	
+	$month = $_GET['month'];
+	$year = $_GET['year'];
+	$num_days = $_GET['num_days'];
+	
+	echo $num_days;
+	
+	// PEGANDO TODOS OS EVENTOS DO MÊS
+	$url = 'http://ec2-52-43-236-116.us-west-2.compute.amazonaws.com:8080/ac/rest/membro/procurarData/';
+	
+	
+	$ch = curl_init ( $url );
+	curl_setopt ( $ch, CURLOPT_TIMEOUT, 5 );
+	curl_setopt ( $ch, CURLOPT_CONNECTTIMEOUT, 5 );
+	curl_setopt ( $ch, CURLOPT_RETURNTRANSFER, true );
+	$data = curl_exec ( $ch );
+	curl_close ( $ch );
+	$array = json_decode ( $data );
+	$membro = array_reverse ( $array );
+?>

@@ -10,23 +10,7 @@ $(document).ready(function inicio(e){
 			$("#telefone").mask("(00) 00000-0000");
 			$("#cpf").mask("000.000.000-00");
 			
-			$('.calendar').fullCalendar({
-				
-				customButtons: {
-					add_evento: {
-						text: 'Adicionar Evento',
-						click: function() { alert('Não! Sua Piranha'); }
-					}
-				},
-				header: {
-					left: 'title',
-					center: 'add_evento',
-					right: 'today prev,next'
-				},
-				
-				handleWindowResize: true,
-				fixedWeekCount: false
-			});
+			carregaCalendario();
 				
 			jQuery('#ajax_post').submit(function (e) {
 				
@@ -97,21 +81,59 @@ $(document).ready(function inicio(e){
 		}
 	);
 	
+	carregaCalendario();
+});
+
+function daysInMonth(month,year){
+	
+    return new Date(year, month, 0).getDate();
+}
+
+function carregaCalendario(){
+	
+	var phpResponse = "";
+	var today = new Date();
+	var month = today.getMonth()+1;
+	var year = today.getFullYear();
+	
+	$.ajax({
+		
+		type: 'GET',
+		url: 'php/requestEvents.php',
+		data: {
+			
+			month: month,
+			year: year,
+			num_days: daysInMonth(month, year)
+		},
+		complete: function(response){
+			
+			phpResponse = response.responseText;
+		},
+		error: function(){
+			
+			alert("Erro!");
+		}
+	});
+	
 	$('.calendar').fullCalendar({
 				
-				customButtons: {
-					add_evento: {
-						text: 'Adicionar Evento',
-						click: function() { alert('Não! Sua Piranha'); }
-					}
-				},
-				header: {
-					left: 'title',
-					center: 'add_evento',
-					right: 'today prev,next'
-				},
-				
-				handleWindowResize: true,
-				fixedWeekCount: false
-			});
-});
+		customButtons: {
+			add_evento: {
+				text: 'Adicionar Evento',
+				click: function() {
+					
+					alert(phpResponse);
+				}
+			}
+		},
+		header: {
+			left: 'title',
+			center: 'add_evento',
+			right: 'today prev,next'
+		},
+		
+		handleWindowResize: true,
+		fixedWeekCount: false
+	});
+}
