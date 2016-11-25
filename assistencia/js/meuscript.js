@@ -91,12 +91,9 @@ function daysInMonth(month,year){
 
 function carregaCalendario(){
 	
-	var phpResponse = "";
-	var today = new Date();
-	var month = today.getMonth()+1;
-	var year = today.getFullYear();
+	//var phpResponse = "";
 	
-	$.ajax({
+	/*$.ajax({
 		
 		type: 'GET',
 		url: 'php/requestEvents.php',
@@ -115,16 +112,61 @@ function carregaCalendario(){
 			
 			alert("Erro!");
 		}
-	});
+	});*/
 	
 	$('.calendar').fullCalendar({
-				
+		
 		customButtons: {
 			add_evento: {
-				text: 'Adicionar Evento',
+				text: 'Testador Supremo',
 				click: function() {
 					
-					alert(JSON.stringify(phpResponse));
+					alert(month);
+				}
+			},
+			prev: {
+				
+				icon: 'left-single-arrow',
+				click: function(){
+					
+					if (month > 1){
+						
+						month = month - 1;
+					}else{
+						
+						month = 12;
+						year = year - 1;
+					}
+					$('.calendar').fullCalendar('prev');
+					loadEvents(month, year);
+				}
+			},
+			next: {
+				
+				icon: 'right-single-arrow',
+				click: function(){
+					
+					if (month < 12){
+						
+						month = month + 1;
+					}else{
+						
+						month = 1;
+						year = year + 1;
+					}
+					$('.calendar').fullCalendar('next');
+					loadEvents(month, year);
+				}
+			},
+			today: {
+				
+				text: 'Hoje',
+				click: function(){
+					
+					month = today.format('MM');
+					year = parseInt(today.format('YYYY'));
+					$('.calendar').fullCalendar('today');
+					loadEvents(month, year);
 				}
 			}
 		},
@@ -133,9 +175,92 @@ function carregaCalendario(){
 			center: 'add_evento',
 			right: 'today prev,next'
 		},
-		eventSources: 'php/requestEvents.php?month='+month+'&year='+year+'&num_days='+daysInMonth(month, year),
 		
 		handleWindowResize: true,
 		fixedWeekCount: false
 	});
+	
+	var today = $('.calendar').fullCalendar('getDate');
+	var month = today.format('MM');
+	var year = parseInt(today.format('YYYY'));
+	
+	loadEvents(month, year);
+	
+	$(".feq-button").mouseover(function() {
+		
+		$(this).animate({
+			
+			backgroundColor: "#3D74BE"
+		});
+	}).mouseout(function(){
+		
+		if ($(this).data("value") == "1"){
+			
+			$(this).animate({
+				
+				backgroundColor: "#C4DDFF"
+			});
+		}else{
+			
+			$(this).animate({
+				
+				backgroundColor: "#1856A9"
+			});
+		}
+	});
+	
+	$(".feq-button").click(function() {
+		
+		if ($(this).data("value") == "0"){
+			
+			$(this).animate({
+				
+				color: "#000",
+				backgroundColor: "#C4DDFF"
+			});
+			$(this).data("value", "1");
+		}else{
+			
+			$(this).animate({
+				
+				color: "#FFF",
+				backgroundColor: "#1856A9"
+			});
+			$(this).data("value", "0");
+		}
+	});
+}
+
+function loadEvents(month, year){
+	
+	$('.calendar').fullCalendar({
+				
+		eventSources: 'php/requestEvents.php?month='+month+'&year='+year+'&num_days='+daysInMonth(month, year)
+	});
+}
+
+function freq(){
+	
+	if ($('#frequencia').val() == 'custom'){
+		
+		$('#custom').slideDown(200);
+	}else{
+		
+		$('#custom').hide();
+	}
+}
+
+function verificaEvento(){
+	
+	alert("asfasfa");
+	var freq = array();
+	$(".feq-button").each(function(){
+		
+		alert("asas");
+		freq.push($(this).data("value"));
+	});
+	var freq = freq.toString();
+	alert(freq);
+	
+	return false;
 }

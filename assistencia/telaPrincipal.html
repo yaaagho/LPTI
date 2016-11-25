@@ -102,9 +102,73 @@
 					</div>
 				</div>
 				<div id="conteudo">
-
+					
 					<div class="container row">
-
+						
+						<div class="add-evento col-md-8">
+						
+							<button class="btn btn-primary btn-lg" id="add-evento-button" data-toggle="modal" data-target="#add-evento-modal" type="button">Adicionar <br>um Evento</button>
+							
+							<div class="modal fade" id="add-evento-modal" tabindex="-1" role="dialog" aria-labelledby="add-evento-modalLabel" aria-hidden="true" data-backdrop="static">
+								
+								<div class="modal-dialog" role="document">
+									
+									<div class="modal-content">
+										
+										<div class="modal-header">
+											
+											<h4 class="modal-title" id="add-evento-modalLabel">Adicionar um Evento</h4>
+										</div>
+										<div class="modal-body">
+											
+											<form id="formulario" onsubmit="return verificaEvento()" method="POST">
+												
+												<span>Nome do evento:</span><br>
+												<input type="text" name="titulo" value="" required placeholder="Qual o título do evento?"><br>
+												<span>Data do evento:</span><br>
+												<input type="text" name="data" class="data" value="" required><br>
+												<span>Descição do evento:</span><br>
+												<textarea name="descricao" maxlength="255" cols="50" style="height: 12%;" placeholder="Descreva o que acontecerá."></textarea><br>
+												<span>Tipo do evento:</span><br>
+												<select name="tipo" required>
+													
+													<option value="outros">Outros</option>
+													<option value="arrecadacao">Arrecadação</option>
+													<option value="doacao">Doação</option>
+												</select><br>
+												<span>Frequência do evento:</span><br>
+												<select id="frequencia" name="frequencia" onchange="freq();" required>
+													
+													<option value="dia">Apenas um dia</option>
+													<option value="semanal">Semanal</option>
+													<option value="mensal">Mensal</option>
+													<option value="custom">Outro</option>
+												</select><br>
+												<div id="custom" hidden>
+												
+													<div id="dom" class="feq-button" data-value="0">Dom</div>
+													<div id="seg" class="feq-button" data-value="0">Seg</div>
+													<div id="ter" class="feq-button" data-value="0">Ter</div>
+													<div id="qua" class="feq-button" data-value="0">Qua</div>
+													<div id="qui" class="feq-button" data-value="0">Qui</div>
+													<div id="sab" class="feq-button" data-value="0">Sab</div>
+												</div>
+												<br>
+												<button type="submit" class="btn btn-primary">Salvar</button>
+											</form>
+											<script type="text/javascript"> $(".data").datepicker({});
+												$(".data").mask("00/00/0000"); 
+											</script>
+										</div>
+										<div class="modal-footer">
+											
+											<button type="button" onclick="document.getElementById('formulario').reset();$('#custom').hide();" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
 						<div class="calendar col-md-8">
 
 						

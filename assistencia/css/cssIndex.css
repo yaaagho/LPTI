@@ -25,12 +25,49 @@
 	background-image: url('../imgs/fundo.jpg');
 }
 
-.calendar .fc-row{
+#add-evento-button{
 
-	height: 1px;
+	position: absolute;
+	right: -33%;
+	bottom: -31000%;
+	height: 70px;
+	display: inline-block;
+	text-align: center;
+}
+
+#formulario #custom{
+
+	display: hidden-table;
+	margin-top: 7px;
+}
+
+#formulario .feq-button{
+
+	display: inline;
+	padding: 5px;
+	background-color: #1856A9;
+	color: #FFF;
+	font-weight: 900;
+	text-align: center;
+	border-radius: 5px;
 }
 
 .calendar{
 
 	margin-left: 10%;
+}
+
+.calendar .fc-head{
+
+	background-color: #1856A9;
+}
+
+.calendar .fc-head td{
+
+	height: 20px;
+}
+
+.calendar .fc-head span{
+
+	color: #FFF;
 }
