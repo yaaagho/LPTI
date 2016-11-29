@@ -12,5 +12,4 @@ public interface ProdutoRepository extends MongoRepository<Produto, String>{
 	List<Produto> findByNome(String nome);
 	List<Produto> findAll(Sort sort);
 	void deleteById(String id);
-	
 }

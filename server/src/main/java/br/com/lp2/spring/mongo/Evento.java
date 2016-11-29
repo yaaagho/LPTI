@@ -9,8 +9,9 @@ public class Evento implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String id;
-	private String nome, descricao, data, membro, usuario;
+	private String nome, descricao, data;
 	private int frequencia, tipo;
+	private Membro membro;
 
 	public String getNome() {
 		return nome;
@@ -43,6 +44,14 @@ public class Evento implements Serializable {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+	
+	public Membro getMembro() {
+		return membro;
+	}
+	
+	public void setMembro(Membro membro) {
+		this.membro = membro;
+	}
 
 	public int getTipo() {
 		return tipo;
@@ -58,22 +67,6 @@ public class Evento implements Serializable {
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public String getMembro() {
-		return membro;
-	}
-
-	public void setMembro(String membro) {
-		this.membro = membro;
-	}
-
-	public String getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
 	}
 	
 }

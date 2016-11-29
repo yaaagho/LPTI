@@ -13,7 +13,8 @@ public class Financeiro implements Serializable{
 	private String id;
 	private java.math.BigDecimal valor;
 	private boolean tipo;
-	private String data, descricao, usuario;
+	private String data, dataRegistro;
+	private Usuario usuario;
 	
 	public BigDecimal getValor() {
 		return valor;
@@ -31,6 +32,22 @@ public class Financeiro implements Serializable{
 		this.data = data;
 	}
 
+	public String getDataRegistro() {
+		return dataRegistro;
+	}
+
+	public void setDataRegistro(String dataRegistro) {
+		this.dataRegistro = dataRegistro;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 	public boolean getTipo() {
 		return tipo;
 	}
@@ -45,22 +62,6 @@ public class Financeiro implements Serializable{
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public String getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
 	}
 		
 }

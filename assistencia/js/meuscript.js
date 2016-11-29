@@ -124,6 +124,21 @@ function carregaCalendario(){
 					alert(month);
 				}
 			},
+			listar:{
+				
+				text: 'Listar todos os eventos',
+				click: function(){
+					
+					var view = $('.calendar').fullCalendar('getView');
+					if (view.title == 'month'){
+						
+						$(".calendar").fullCalendar('changeView', 'listMonth');
+					}else{
+						
+						$(".calendar").fullCalendar('changeView', 'month');
+					}
+				}
+			},
 			prev: {
 				
 				icon: 'left-single-arrow',
@@ -172,7 +187,7 @@ function carregaCalendario(){
 		},
 		header: {
 			left: 'title',
-			center: 'add_evento',
+			center: 'listar',
 			right: 'today prev,next'
 		},
 		
@@ -252,15 +267,12 @@ function freq(){
 
 function verificaEvento(){
 	
-	alert("asfasfa");
-	var freq = array();
+	var freq = [];
 	$(".feq-button").each(function(){
 		
-		alert("asas");
-		freq.push($(this).data("value"));
+		var object = $(this);
+		freq.push(object.data("value"));
 	});
-	var freq = freq.toString();
-	alert(freq);
-	
-	return false;
+	var frequencia = freq.toString();
+	$("#frequencia").attr("value", frequencia);
 }

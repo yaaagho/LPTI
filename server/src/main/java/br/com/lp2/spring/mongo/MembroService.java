@@ -18,7 +18,7 @@ public class MembroService {
 		  return db.findAll(sort);
 		 }
 	
-	public List<Membro> findByTipo(int tipo){
+	public List<Membro> findByTipo(boolean tipo){
 		return db.findByTipo(tipo);
 	}
 	

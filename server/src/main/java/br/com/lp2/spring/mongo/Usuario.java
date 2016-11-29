@@ -9,8 +9,8 @@ public class Usuario implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private String id;
-	private String nome, login, senha, telefone, email, cpf, endereco;
-	private int tipo;
+	private String nome, login, senha, telefone, email;
+	private boolean tipo;
 
 	public String getNome() {
 		return nome;
@@ -52,11 +52,11 @@ public class Usuario implements Serializable{
 		this.email = email;
 	}
 
-	public int getTipo() {
+	public boolean getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(int tipo) {
+	public void setTipo(boolean tipo) {
 		this.tipo = tipo;
 	}
 
@@ -66,22 +66,6 @@ public class Usuario implements Serializable{
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public String getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
 	}
 	
 	

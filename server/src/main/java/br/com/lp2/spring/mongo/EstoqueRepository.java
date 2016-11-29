@@ -8,11 +8,10 @@ import org.springframework.stereotype.Component;
 @Component
 public interface EstoqueRepository extends MongoRepository<Estoque, String>{
 	
-	List<Estoque> findByTipo(int tipo);
+	List<Estoque> findByTipo(boolean tipo);
 	List<Estoque> findByData(String data);
 	List<Estoque> findAll(Sort sort);
 	void deleteById(String id);
-	Estoque findOne(String id);
 
 }
 

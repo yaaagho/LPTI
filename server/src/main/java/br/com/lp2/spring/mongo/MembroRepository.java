@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public interface MembroRepository extends MongoRepository<Membro, String>{
 	
 	List<Membro> findAll(Sort sort);
-	List<Membro> findByTipo(int tipo);
+	List<Membro> findByTipo(boolean tipo);
 	List<Membro> findByNome(String nome);
 	void deleteById(String id);
 }

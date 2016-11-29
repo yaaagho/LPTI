@@ -9,9 +9,9 @@ public class Membro implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String id;
-	private String nome, telefone, endereco, email, cpf;
+	private String nome, telefone, endereco, bairro, cidade, estado, cep;
 	private int qtdMembros;
-	private int tipo;
+	private boolean tipo;
 
 	public String getNome() {
 		return nome;
@@ -37,6 +37,38 @@ public class Membro implements Serializable {
 		this.endereco = endereco;
 	}
 	
+	public String getBairro() {
+		return bairro;
+	}
+	
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+	
+	public String getCidade() {
+		return cidade;
+	}
+	
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+	
+	public String getEstado() {
+		return estado;
+	}
+	
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+	
+	public String getCep() {
+		return cep;
+	}
+	
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+	
 	public int getQtdMembros() {
 		return qtdMembros;
 	}
@@ -45,11 +77,11 @@ public class Membro implements Serializable {
 		this.qtdMembros = qtdMembros;
 	}
 	
-	public int getTipo() {
+	public boolean getTipo() {
 		return tipo;
 	}
 	
-	public void setTipo(int tipo) {
+	public void setTipo(boolean tipo) {
 		this.tipo = tipo;
 	}
 
@@ -59,22 +91,6 @@ public class Membro implements Serializable {
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
 	}
 	
 }

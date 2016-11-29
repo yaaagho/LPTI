@@ -1,10 +1,8 @@
 package br.com.lp2.spring.mongo;
 
 import java.util.List;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.data.domain.Sort;
-
 import br.com.lp2.util.SpringUtil;
 
 public class EstoqueService {
@@ -20,7 +18,7 @@ public class EstoqueService {
 		  return db.findAll(sort);
 		 }
     
-	public List<Estoque> findByTipo(int tipo){
+	public List<Estoque> findByTipo(boolean tipo){
 		return db.findByTipo(tipo);
 	}
 	
@@ -35,10 +33,4 @@ public class EstoqueService {
 	public void save(Estoque estoque){
 			db.save(estoque);
 		}
-
-	public Estoque getOne(String id){
-		
-		return db.findOne(id);
-	}
-	
 	}

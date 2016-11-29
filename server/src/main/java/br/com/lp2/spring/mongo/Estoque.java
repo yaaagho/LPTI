@@ -1,7 +1,6 @@
 package br.com.lp2.spring.mongo;
 
 import java.io.Serializable;
-
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
@@ -10,15 +9,19 @@ public class Estoque implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
-	private String id, usuario, doador, assistido, produto;
-	private String data;
-	private int tipo, quantidade;
+	private String id;
+	private boolean tipo;
+	private String data, dataRegistro;
+	private int quantidade;
+	private Usuario usuario;
+	private Membro membro;
+	private Produto produto;
 	
-	public int getTipo() {
+	public boolean getTipo() {
 		return tipo;
 	}
 	
-	public void setTipo(int tipo) {
+	public void setTipo(boolean tipo) {
 		this.tipo = tipo;
 	}
 
@@ -30,6 +33,14 @@ public class Estoque implements Serializable{
 		this.data = dataArrecadacao;
 	}
 
+	public String getDataRegistro() {
+		return dataRegistro;
+	}
+
+	public void setDataRegistro(String dataRegistro) {
+		this.dataRegistro = dataRegistro;
+	}
+
 	public int getQuantidade() {
 		return quantidade;
 	}
@@ -38,20 +49,28 @@ public class Estoque implements Serializable{
 		this.quantidade = quantidade;
 	}
 
-	public String getUsuario() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(String usuario) {
+	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
 
-	public String getProduto() {
+	public Produto getProduto() {
 		return produto;
 	}
 
-	public void setProduto(String produto) {
+	public void setProduto(Produto produto) {
 		this.produto = produto;
+	}
+
+	public Membro getMembro() {
+		return membro;
+	}
+
+	public void setMembro(Membro membro) {
+		this.membro = membro;
 	}
 
 	public String getId() {
@@ -60,22 +79,6 @@ public class Estoque implements Serializable{
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public String getDoador() {
-		return doador;
-	}
-
-	public void setDoador(String doador) {
-		this.doador = doador;
-	}
-
-	public String getAssistido() {
-		return assistido;
-	}
-
-	public void setAssistido(String assistido) {
-		this.assistido = assistido;
 	}
 	
 }

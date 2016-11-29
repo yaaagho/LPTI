@@ -22,7 +22,7 @@
 		}]';*/
 	
 	// PEGANDO TODOS OS EVENTOS DO MÊS
-	$url = 'http://ec2-52-43-236-116.us-west-2.compute.amazonaws.com:8080/ac/rest/evento/procurarData/';
+	$url = 'http://localhost:8080/restmongo/rest/evento/procurarData/';
 	
 	for ($i=1 ; $i<=$num_days ; $i++){
 		$ch = curl_init ( $url . $i . '-' . $month . '-' . $year);
