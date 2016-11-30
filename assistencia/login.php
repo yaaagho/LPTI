@@ -23,18 +23,5 @@
 		unset($_SESSION['login']);
 		header('location:index.html');
 	}
-
-	/*if ($stmt->rowCount() > 0) {
-	//$_SESSION['login'] = $login;
-		$_SESSION['email'] = $email;
-
-		header('location:../index.html');
-	}
-	else{
-		//unset ($_SESSION['login']);
-		unset($_SESSION['email']);
-
-		header('location:../filosofia.html');
-	}*/
 	
 ?>
